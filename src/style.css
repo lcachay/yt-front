@@ -5,6 +5,7 @@
 body{
    margin: 0 auto;
    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+   background-color: #f9f9f9;
 }
 
 img{
@@ -21,7 +22,12 @@ button:active{
    padding: 0px;
 }
 
-.container{
+aside{
+   display: none;
+   
+}
+
+.container--navbar{
    margin: 0 auto;
    width: 95%;
    max-width: 1750px;
@@ -32,8 +38,10 @@ button:active{
 }
 
 .navbar{
-   box-shadow: 0px 0px 5px #dfdfdf;
+   background-color: #ffffff;
    height: 4rem;
+   position: fixed;
+   width: 100%;
 }
 
 .round-btn{
@@ -132,6 +140,61 @@ button:active{
    font-size: .9rem;
 }
 
+aside{
+   
+   background-color: #ffffff;
+   position: fixed;
+   top: 4rem;
+   height: 100%;
+}
+
+
+.link-item{
+   
+   text-decoration: none;
+   color: #606060;
+   
+   transition: background-color ease-in-out 100ms;
+}
+
+.link-item:hover{
+   background-color: #e6e6e6;
+}
+
+.link-item.active{
+   color: #ff0000;
+}
+
+
+.home::before{
+   content: '\f015';
+}
+
+.trending::before{
+   content: '\f06d';
+}
+
+.subscriptions::before{
+   content: '\f04b';
+}
+
+.library::before{
+   content: '\f152';
+}
+
+.history::before{
+   content: '\f1da';
+}
+
+
+
+
+.container{
+   width: 95%;
+   max-width: 1750px;
+   margin: 0 auto;
+}
+
 @media (min-width: 750px){
    .navbar__searchbar{
       display: flex;
@@ -144,4 +207,111 @@ button:active{
    .search{
       display: none;
    }
+   .menu{
+      margin-right: 1rem;
+   }
+}
+
+
+@media (min-width: 800px){
+
+   
+
+   aside{
+      display: block;
+      width: calc( 2.5% + 3rem ); /*border from page + size of icon + margin*/
+   }
+   .sign-in,
+   .best-of,
+   .channels,
+   .more,
+   .configuration,
+   .info{
+      display: none;
+   }
+
+
+   .link-item{
+      display: block;
+      font-size: .625rem;
+      text-align: center;
+      padding:  2em 0 ;
+   }
+
+   .link-item::before{
+      font-weight: 900;
+      font-size: 1.3rem;
+      font-family: "Font Awesome 5 Free";
+      display: block;
+      margin-bottom: .7rem;
+   }
+
+   main{
+      padding-top: 4rem;
+      padding-left: calc( 2.5% + 3rem );
+   }
+
+
+}
+
+@media (min-width: 1300px){
+
+   aside{
+      width: calc( 2.5% + 13rem ); /*border from page + size of icon + margin*/
+      overflow: scroll;
+   }
+
+   .btn-cluster{
+      border-bottom: 1px solid #e5e5e5;
+      padding: 1rem 0;
+   }
+
+   .link-item{
+      display: block;
+      font-size: .9rem;
+      font-weight: 500;
+      text-align: left;
+      padding: .5em 2em;
+   }
+   
+
+   .link-item::before{
+      font-weight: 900;
+      font-size: 1.3rem;
+      font-family: "Font Awesome 5 Free";
+      display: inline;
+      margin-right: 1.4rem;
+   }
+
+
+   .link-item.active{
+      color: #000000;
+      background-color: #e5e5e5;
+   }
+   
+   .link-item:hover{
+      background-color: #d9d9d9;
+   }
+
+   .link-item.active::before{
+      color: #ff0000;
+   }
+
+   
+
+   .sign-in,
+   .best-of,
+   .channels,
+   .more,
+   .configuration,
+   .info{
+      display: block;
+   }
+   
+
+   main{
+      padding-top: 4rem;
+      padding-left: calc( 2.5% + 13rem);
+   }
+
 }
