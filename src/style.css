@@ -150,10 +150,8 @@ aside{
 
 
 .link-item{
-   
    text-decoration: none;
    color: #606060;
-   
    transition: background-color ease-in-out 100ms;
 }
 
@@ -161,9 +159,40 @@ aside{
    background-color: #e6e6e6;
 }
 
-.link-item.active{
+.link-item--best.active{
    color: #ff0000;
 }
+
+.link-item--best{
+   text-decoration: none;
+   color: #606060;
+   transition: background-color ease-in-out 100ms;
+}
+
+.link-item--best:hover{
+   background-color: #e6e6e6;
+}
+
+.link-item--best.active{
+   color: #000000;
+   background-color: #e5e5e5;
+}
+.link-item--best.active::before{
+   color: #ff0000;
+}
+
+.link-item--best::before{
+   font-weight: 900;
+   font-size: .6rem;
+   font-family: "Font Awesome 5 Free";
+   display: inline-block;
+   margin-right: 1.4rem;
+   background-color: #404040;
+   color: #ffffff;
+   padding: .5rem;
+   border-radius: 50%;
+}
+
 
 
 .home::before{
@@ -174,7 +203,8 @@ aside{
    content: '\f06d';
 }
 
-.subscriptions::before{
+.subscriptions::before,
+.premium::before{
    content: '\f04b';
 }
 
@@ -187,6 +217,86 @@ aside{
 }
 
 
+
+.browse::before{
+   content: '\f055';
+}
+
+
+
+
+
+
+
+
+
+
+
+.music::before{
+   content: '\f001';
+}
+
+.sports::before{
+   content: '\f1e3';
+}
+
+.gaming::before{
+   content: '\f11b';
+}
+
+.movies::before{
+   content: '\f008';
+}
+
+.news::before{
+   content: '\f1ea';
+}
+
+.live::before{
+   content: '\f2ce';
+}
+
+.learning::before{
+   content: '\f0eb';
+}
+
+.video360::before{
+   content: '\f729';
+}
+
+
+
+.account-settings::before{
+   content: '\f013';
+}
+
+.report::before{
+   content: '\f024';
+}
+
+.help::before{
+   content: '\f059';
+}
+
+.feedback::before{
+   content: '\f27a';
+}
+
+
+.info__container{
+   padding: .5rem 2rem;
+   font-size: .8rem;
+}
+
+.info__link{
+   text-decoration: none;
+   color: #404040;
+   font-weight: 500;
+}
+
+.info__link + .info__link{
+   margin-left: .5rem;
+} 
 
 
 .container{
@@ -257,13 +367,31 @@ aside{
 @media (min-width: 1300px){
 
    aside{
-      width: calc( 2.5% + 13rem ); /*border from page + size of icon + margin*/
+      width: calc( 2.5% + 13rem ); 
+      overflow: hidden;
+
+   }
+   aside:hover{
       overflow: scroll;
    }
 
+   .copyright{
+      font-size: .8rem;
+      display: block;
+      margin-left: 2rem;
+      color: #a7a7a7;
+      margin-bottom: 5rem;
+   }
    .btn-cluster{
       border-bottom: 1px solid #e5e5e5;
       padding: 1rem 0;
+   }
+
+   .btn-cluster__title{
+      margin:  0 0 .5em 2em;
+      font-size: 1rem;
+      text-transform: uppercase;
+      color: #737373;
    }
 
    .link-item{
@@ -308,6 +436,40 @@ aside{
       display: block;
    }
    
+   .sign-in{
+      display: flex;
+      flex-direction: column;
+      align-items: baseline;
+      margin-left: 2rem;
+   }
+
+   .sign-in p{
+      margin-top: 0;
+   }
+
+   .sign-in .sign-in-btn{
+      margin: 0;
+   }
+
+   .link-item--best{
+      display: block;
+      font-size: .9rem;
+      font-weight: 500;
+      text-align: left;
+      padding: .5em 2em;
+   }
+
+   .link-item--best.active{
+      color: #000000;
+      background-color: #e5e5e5;
+   }
+   
+   .link-item--best:hover{
+      background-color: #d9d9d9;
+   }
+
+   
+
 
    main{
       padding-top: 4rem;
