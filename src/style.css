@@ -311,8 +311,7 @@ aside{
    margin: 0 auto;
    margin-top: 2rem;
    display: grid;
-   grid-template-columns: 1fr;
-   grid-template-rows: 8fr;
+   grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
    width: 80%;
 }
 
@@ -463,11 +462,14 @@ aside{
 }
 
 @media (min-width: 500px){
-   
+   .main-videos{
+      width: 85%;
+   }
 }
 
 
 @media (min-width: 750px){
+
    .navbar__searchbar{
       display: flex;
       border-radius: 3px;
@@ -487,7 +489,9 @@ aside{
 
 @media (min-width: 800px){
 
-   
+   .main-videos{
+      width: 90%;
+   }
 
    aside{
       display: block;
@@ -524,6 +528,12 @@ aside{
    }
 
 
+}
+
+@media (min-width: 1200px){
+   .main-videos{
+      width: 95%;
+   }
 }
 
 @media (min-width: 1300px){
