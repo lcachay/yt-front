@@ -41,6 +41,7 @@ aside{
    background-color: #ffffff;
    height: 4rem;
    position: fixed;
+   z-index: 4;
    width: 100%;
 }
 
