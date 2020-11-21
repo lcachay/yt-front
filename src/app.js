@@ -25,13 +25,13 @@ lastGridColumns = gridComputedStyle.gridTemplateColumns.split(' ').length
 window.addEventListener('resize', function(){
    gridColumns = gridComputedStyle.gridTemplateColumns.split(' ').length
    if(lastGridColumns < gridColumns){
-      while(main.children.length/2 < gridColumns){
+      while(main.children.length < gridColumns * 2){
          main.appendChild(newVideoContainer()) 
       }
       while(trending.children.length < gridColumns){
          trending.appendChild(newVideoContainer()) 
       }
-      while(extra.children.length/4 < gridColumns){
+      while(extra.children.length < gridColumns * 4){
          extra.appendChild(newVideoContainer()) 
       }
       lastGridColumns = gridComputedStyle.gridTemplateColumns.split(' ').length
