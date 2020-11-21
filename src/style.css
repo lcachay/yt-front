@@ -306,6 +306,12 @@ aside{
    margin: 0 auto;
 }
 
+hr{
+   height: 3px;
+   background-color: #00000017;
+   border: 0;
+}
+
 .main-videos,
 .trending-videos,
 .extra-videos{
@@ -321,6 +327,18 @@ column-gap: .5rem
    grid-template-rows: 1fr 1fr;
    grid-auto-rows: 0;
    overflow: hidden;
+}
+
+.trending-title{
+   text-decoration: none;
+   display: inline-block;
+}
+
+.trending-title h2{
+   color: black;
+   font-weight: 600;
+   font-size: 1.25rem;
+   margin-left: 3rem;
 }
 
 .trending-videos{
