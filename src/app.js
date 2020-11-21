@@ -10,7 +10,6 @@ var lastGridColumns = gridComputedStyle.gridTemplateColumns.split(' ').length
 
 while(main.children.length/2 < gridColumns){
    main.appendChild(newVideoContainer()) 
-   main.appendChild(newVideoContainer()) 
 }
 
 while(trending.children.length < gridColumns){
@@ -19,9 +18,6 @@ while(trending.children.length < gridColumns){
 
 while(extra.children.length/4 < gridColumns){
    extra.appendChild(newVideoContainer()) 
-   extra.appendChild(newVideoContainer())
-   extra.appendChild(newVideoContainer())
-   extra.appendChild(newVideoContainer())
 }
 
 lastGridColumns = gridComputedStyle.gridTemplateColumns.split(' ').length
@@ -29,13 +25,15 @@ lastGridColumns = gridComputedStyle.gridTemplateColumns.split(' ').length
 window.addEventListener('resize', function(){
    gridColumns = gridComputedStyle.gridTemplateColumns.split(' ').length
    if(lastGridColumns < gridColumns){
-      main.appendChild(newVideoContainer()) 
-      main.appendChild(newVideoContainer()) 
-      trending.appendChild(newVideoContainer())
-      extra.appendChild(newVideoContainer())
-      extra.appendChild(newVideoContainer())
-      extra.appendChild(newVideoContainer())
-      extra.appendChild(newVideoContainer())
+      while(main.children.length/2 < gridColumns){
+         main.appendChild(newVideoContainer()) 
+      }
+      while(trending.children.length < gridColumns){
+         trending.appendChild(newVideoContainer()) 
+      }
+      while(extra.children.length/4 < gridColumns){
+         extra.appendChild(newVideoContainer()) 
+      }
       lastGridColumns = gridComputedStyle.gridTemplateColumns.split(' ').length
    }
 })
