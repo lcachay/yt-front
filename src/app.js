@@ -1,44 +1,48 @@
-
-//<article class="video-container">
-//            <a href="#" class="link-video">
-//               <div href="#" class="thumbnail">
-//                  <img src="https://source.unsplash.com/featured/?film,people" alt="" class="thumbnail-img">
-//               </div>
-//            </a>
-//            <div class="video-text">
-//               <a href="#" class="channel-img">
-//                  <img src="https://source.unsplash.com/featured/?people" alt="" class="channel-img">
-//               </a>
-//               
-//               <a href="#" class="video-title">Video Title</a>
-//               <div class="video-details">
-//                  <a href="#" class="channel-name">ChannelName</a>
-//                  <div class="video-metadata">
-//                     <div class="views">
-//                        <span data-views-number>x</span> <span>views</span>
-//                     </div>
-//                     <div class="circle">
-//                        <i class="fas fa-circle"></i>
-//                     </div>
-//                     <div class="time">
-//                        <span data-time-number>0</span> <span data-time-type>something</span> <span>ago</span>
-//                     </div>
-//                     
-//                     
-//                  </div>
-//               </div>
-//               
-//            </div>
-//</article>
-
 /* Elements on load */
 const main = document.querySelector('.main-videos')
 const trending = document.querySelector('.trending-videos')
 const extra = document.querySelector('.extra-videos')
 
+/* main style */
+const gridComputedStyle = window.getComputedStyle(main)
+var gridColumns = gridComputedStyle.gridTemplateColumns.split(' ').length
+var lastGridColumns = gridComputedStyle.gridTemplateColumns.split(' ').length
+
+while(main.children.length/2 < gridColumns){
+   main.appendChild(newVideoContainer()) 
+   main.appendChild(newVideoContainer()) 
+}
+
+while(trending.children.length < gridColumns){
+   trending.appendChild(newVideoContainer()) 
+}
+
+while(extra.children.length/4 < gridColumns){
+   extra.appendChild(newVideoContainer()) 
+   extra.appendChild(newVideoContainer())
+   extra.appendChild(newVideoContainer())
+   extra.appendChild(newVideoContainer())
+}
+
+lastGridColumns = gridComputedStyle.gridTemplateColumns.split(' ').length
+
+window.addEventListener('resize', function(){
+   gridColumns = gridComputedStyle.gridTemplateColumns.split(' ').length
+   if(lastGridColumns < gridColumns){
+      main.appendChild(newVideoContainer()) 
+      main.appendChild(newVideoContainer()) 
+      trending.appendChild(newVideoContainer())
+      extra.appendChild(newVideoContainer())
+      extra.appendChild(newVideoContainer())
+      extra.appendChild(newVideoContainer())
+      extra.appendChild(newVideoContainer())
+      lastGridColumns = gridComputedStyle.gridTemplateColumns.split(' ').length
+   }
+})
+
 /* Pad time */
 function pad(number, digits) {
-   return Array(Math.max(digits - String(number).length + 1, 0)).join(0) + number;
+   return Array(Math.max(digits - String(number).length + 1, 0)).join(0) + number
 }
 
 function newVideoContainer(){
@@ -141,7 +145,7 @@ function newVideoContainer(){
    'days': Math.round(Math.random() * (30 - 1) + 1),
    'months': Math.round(Math.random() * (12 - 1) + 1),
    'years': Math.round(Math.random() * (3 - 1) + 1)
-   };
+   }
 
 
    typetimeNumber.innerText = Object.keys(times)[Math.floor(Math.random()*Object.keys(times).length)]
@@ -178,7 +182,7 @@ function newVideoContainer(){
    article.appendChild(linkVideo)
    article.appendChild(videoText)
 
-   main.appendChild(article)
+   return article
 
 }
 
