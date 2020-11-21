@@ -34,55 +34,79 @@ const main = document.querySelector('.main-videos')
 const trending = document.querySelector('.trending-videos')
 const extra = document.querySelector('.extra-videos')
 
-/* Create elements and assign classes */
+/* Create elements and assign classes src href or attributes*/
 
 var article = document.createElement('article')
 article.classList.add('video-container')
+
 var linkVideo = document.createElement('a')
 linkVideo.classList.add('link-video')
+linkVideo.href = '#'
+
 var thumbnail = document.createElement('div')
 thumbnail.classList.add('thumbnail')
+thumbnail.setAttribute('data-hours','00:00')
+
 var thumbnailIMG = document.createElement('img')
 thumbnailIMG.classList.add('thumbnail-img')
-thumbnailIMG.src = 'https://source.unsplash.com/featured/?film,people'
+thumbnailIMG.src = 'https://source.unsplash.com/featured/?film,people' + Math.random()
+
 var videoText = document.createElement('div')
 videoText.classList.add('video-text')
+
 var channelImg = document.createElement('a')
 channelImg.classList.add('channel-img')
+channelImg.href = '#'
+
 var channelImgImg = document.createElement('img')
 channelImgImg.classList.add('channel-img')
-channelImgImg.src = 'https://source.unsplash.com/featured/?people'
+channelImgImg.src = 'https://source.unsplash.com/featured/?people' + Math.random()
+
 var videoTitle = document.createElement('a')
 videoTitle.classList.add('video-title')
+videoTitle.href = '#'
+
 var videoDetails = document.createElement('div')
 videoDetails.classList.add('video-details')
+
 var channelName = document.createElement('a')
-channelImg.classList.add('channel-name')
+channelName.classList.add('channel-name')
+channelName.href = '#'
+
 var metadata = document.createElement('div')
 metadata.classList.add('video-metadata')
+
 var views = document.createElement('div')
 views.classList.add('views')
+
 var dataViewsNumber = document.createElement('span')
 dataViewsNumber.setAttribute('data-number','views')
+
 var viewsNumber = document.createElement('span')
+
 var circle = document.createElement('div')
 circle.classList.add('circle')
+
 var circleI = document.createElement('i')
 circleI.classList.add('fas')
 circleI.classList.add('fa-circle')
+
 var time = document.createElement('div')
 time.classList.add('time')
+
 var dataTimeNumber = document.createElement('span')
 dataTimeNumber.setAttribute('data-number','time')
+
 var typetimeNumber = document.createElement('span')
 typetimeNumber.setAttribute('data-number','type')
+
 var timeNumber = document.createElement('span')
 
 /* Complete inner html */
-viewsNumber.innerHTML = ' views'
-timeNumber.innerHTML = ' ago'
-
-
+viewsNumber.innerText = ' views'
+timeNumber.innerText = ' ago'
+channelName.innerText = "Lorem"
+videoTitle.innerText = "Lorem ipsum"
 
 
 /* Append elements */

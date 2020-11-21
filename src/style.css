@@ -315,6 +315,7 @@ aside{
    grid-auto-rows: 0;
    overflow: hidden;
    width: 80%;
+   gap: .5rem
 }
 
 .trending-videos{
@@ -336,9 +337,6 @@ aside{
    width: 80%;
 }
 
-.video-container + .video-container{
-   margin-left: 1rem;
-}
 
 .link-video{
    display: block;
@@ -360,7 +358,7 @@ aside{
 }
 
 .thumbnail::after{
-   content: '00:00:00';
+   content: attr(data-hours);
    font-size: .6rem;
    font-weight: 700;
    color: white;
