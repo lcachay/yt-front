@@ -36,15 +36,10 @@ const main = document.querySelector('.main-videos')
 const trending = document.querySelector('.trending-videos')
 const extra = document.querySelector('.extra-videos')
 
-/* Channel names array */
-channels = [
-
-]
-
-/* Title names array */
-titles = [
-
-]
+/* Pad time */
+function pad(number, digits) {
+   return Array(Math.max(digits - String(number).length + 1, 0)).join(0) + number;
+}
 
 /* Create elements and assign classes src href or attributes*/
 
@@ -57,7 +52,22 @@ linkVideo.href = '#'
 
 var thumbnail = document.createElement('div')
 thumbnail.classList.add('thumbnail')
-thumbnail.setAttribute('data-hours','00:00')
+
+//The majority of youtube videos aren't more than a few minutes long, so hours tend to be zero */  
+if (Math.random() > 0.1){
+   thumbnail.setAttribute(
+                           'data-hours', 
+   /* minutes */           Math.round(Math.random() * (60 - 1 ) + 1) + ':' + 
+   /* seconds */           pad(Math.round(Math.random() * (60 - 1 ) + 1),2) 
+   )
+}else{
+   thumbnail.setAttribute(
+                           'data-hours', 
+   /* hours */             Math.round(Math.random() * 4) + ':' + 
+   /* minutes */           pad(Math.round(Math.random() * (60 - 1 ) + 1),2) + ':' + 
+   /* seconds */           pad(Math.round(Math.random() * (60 - 1 ) + 1),2) 
+   )
+}
 
 var thumbnailIMG = document.createElement('img')
 thumbnailIMG.classList.add('thumbnail-img')
