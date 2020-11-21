@@ -129,9 +129,11 @@ viewsNumber.innerText = ' views'
 timeNumber.innerText = ' ago'
 channelName.innerText = Math.random() > 0.8 ? faker.company.companyName() :  faker.name.findName()
 videoTitle.innerText = faker.random.words(Math.random() * 7)
-var viewsData = Math.round(Math.random() * (99999))
+var viewsData = Math.round(Math.random() * (999999))
 dataViewsNumber.innerText = viewsData >= 1000 ? viewsData.toString().slice(0,-3) + 'K' : viewsData
-//dataTimeNumber
+//dataTimeNumber 
+var types = ["seconds", "minutes", "hours", "days","months","years"]
+typetimeNumber.innerText = types[Math.floor(Math.random() * types.length)]
 /* Append elements */
 
 views.appendChild(dataViewsNumber)
