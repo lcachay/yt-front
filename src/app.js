@@ -1,3 +1,4 @@
+
 //<article class="video-container">
 //            <a href="#" class="link-video">
 //               <div href="#" class="thumbnail">
@@ -30,9 +31,20 @@
 //            </div>
 //</article>
 
+/* Elements on load */
 const main = document.querySelector('.main-videos')
 const trending = document.querySelector('.trending-videos')
 const extra = document.querySelector('.extra-videos')
+
+/* Channel names array */
+channels = [
+
+]
+
+/* Title names array */
+titles = [
+
+]
 
 /* Create elements and assign classes src href or attributes*/
 
@@ -105,8 +117,8 @@ var timeNumber = document.createElement('span')
 /* Complete inner html */
 viewsNumber.innerText = ' views'
 timeNumber.innerText = ' ago'
-channelName.innerText = "Lorem"
-videoTitle.innerText = "Lorem ipsum"
+channelName.innerText = Math.random() > 0.8 ? faker.company.companyName() :  faker.name.findName()
+videoTitle.innerText = faker.random.words(Math.random() * 7)
 
 
 /* Append elements */
