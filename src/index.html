@@ -4,9 +4,160 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" type="text/css" href="style.css">
+   <!-- Roboto Font -->
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+   <!-- Font Awesome -->
+   <script src="https://kit.fontawesome.com/cb065ed972.js" crossorigin="anonymous"></script>
+   <script src = "https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js" crossorigin="anonymous" type = "text/javascript"></script>
    <title>YouTube Clone</title>
 </head>
 <body>
+
+   <header>
+
+      <nav class="navbar">
+         <div class="container--navbar">
+            
+            <div class="navbar__item navbar__main">
+               <button href="#" class="menu round-btn ">
+                  <i class="fas fa-bars"></i>
+               </button>
+      
+               <a title="YouTube, Public domain, via Wikimedia Commons" class="logo" href="#">
+                  <img alt="YouTube Logo 2017" src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" title="YouTube Home">
+               </a>
+            </div>
    
+            <div class="navbar__item navbar__searchbar">
+               <input type="text" placeholder="Search" class="bar"></input>
+               <button class="search-btn" title="Search">
+                  <i class="fas fa-search"></i>
+               </button>
+            </div>
+            
+            <div class="navbar__item navbar__buttons">
+               <button href="#" class="search round-btn" title="Search">
+                  <i class="fas fa-search"></i>
+               </button>
+   
+               <button href="#" class="create round-btn" title="Create">
+                  <i class="fas fa-video"></i>
+               </button>
+   
+               <button href="#" class="apps round-btn " title="YouTube apps">
+                  <i class="fas fa-th"></i>
+               </button>
+   
+               <button href="#" class="settings round-btn " title="Settings">
+                  <i class="fas fa-ellipsis-v"></i>
+               </button>
+   
+               <a href="" class="sign-in-btn ">
+                  <i class="fas fa-user-circle"></i>
+                  Sign in
+               </a>
+            </div>
+            
+         </div>
+
+      </nav>
+
+   </header>
+
+   <aside>
+
+      <div class="main-buttons">
+         <div class="btn-cluster">
+            <a href="#" class="link-item home active" title="Home">Home</a>
+            <a href="#" class="link-item trending" title="Trending">Trending</a>
+            <a href="#" class="link-item subscriptions" title="Subscriptions">Subscriptions</a>
+         </div>
+         <div class="btn-cluster">
+            <a href="#" class="link-item library" title="Library">Library</a>
+            <a href="#" class="link-item history" title="History">History</a>
+         </div>
+      </div>
+      
+      <div class="btn-cluster ">
+         <div class="sign-in">
+            <p>Sign in to like videos, comment and subscribe.</p>
+            <a href="" class="sign-in-btn">
+               <i class="fas fa-user-circle"></i>
+               Sign in
+            </a>
+         </div>
+         
+      </div>
+
+      <div class="btn-cluster best-of">
+         <h5 class="btn-cluster__title">Best of youtube</h5>
+         <a href="#" class="link-item--best music" title="Music">Music</a>
+         <a href="#" class="link-item--best sports" title="Sports">Sports</a>
+         <a href="#" class="link-item--best gaming" title="Gaming">Gaming</a>
+         <a href="#" class="link-item--best movies" title="Movies">Movies</a>
+         <a href="#" class="link-item--best news" title="News">News</a>
+         <a href="#" class="link-item--best live" title="Live">Live</a>
+         <a href="#" class="link-item--best learning" title="Learning">Learning</a>
+         <a href="#" class="link-item--best video360" title="360° Video">360° Video</a>
+      </div>
+
+      <div class="btn-cluster channels">
+         <a href="#" class="link-item browse" title="Browse channels">Browse channels</a>
+      </div>
+
+      <div class="btn-cluster more">
+         <a href="#" class="link-item premium" title="YouTube Premium">YouTube Premium</a>
+         <a href="#" class="link-item live" title="Live">Live</a>
+      </div>
+
+      <div class="btn-cluster configuration">
+         <h5 class="btn-cluster__title">More from youtube</h5>
+         <a href="#" class="link-item account-settings" title="Settings">Settings</a>
+         <a href="#" class="link-item report" title="Report history">Report history</a>
+         <a href="#" class="link-item help" title="Help">Help</a>
+         <a href="#" class="link-item feedback" title="Send feedback">Send feedback</a>
+      </div>
+
+      <div class="info">
+         <div class="info__container">
+            <a href="#" class="info__link">About</a>
+            <a href="#" class="info__link">Press</a>
+            <a href="#" class="info__link">Copyright</a>
+            <a href="#" class="info__link">Contact us</a>
+            <a href="#" class="info__link">Crators</a>
+            <a href="#" class="info__link">Advertise</a>
+            <a href="#" class="info__link">Developers</a>
+         </div>
+
+         <div class="info__container">
+            <a href="#" class="info__link">Terms</a>
+            <a href="#" class="info__link">Privacy</a>
+            <a href="#" class="info__link">Policy & Safety</a>
+            <a href="#" class="info__link">How YouTube works</a>
+            <a href="#" class="info__link">Test new features</a>
+         </div>
+
+         <p class="copyright">&copy; 2020 lcachay</p>
+
+      </div>
+      
+   </aside>
+   
+   <main class="container">
+
+      <div class="main-videos">
+      </div>
+      <hr>
+      <a class="trending-title" href="#">
+         <h2>Trending</h2>
+      </a>
+      <div class="trending-videos">
+      </div>
+      <hr>
+      <div class="extra-videos">
+      </div>
+   </main>
+   
+   <script src="app.js"></script>
 </body>
 </html>
