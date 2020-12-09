@@ -12,3 +12,5 @@ Representation of YouTube's main page as a practice project.
 - Creation of dom elements via javascript
 - Infinite scrolling
 - Usage of faker.js library to create random video previews
+
+## [Try it out!](https://lcachay.github.io/yt-front/src/index.html)
